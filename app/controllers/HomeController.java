@@ -18,4 +18,7 @@ public class HomeController extends Controller {
         return ok(views.html.index.render());
     }
 
+    public Result welcome(String name, String lastName){
+        return ok("Hello ," + name + " " + lastName + "! Welcome to the Library app");
+    }
 }
