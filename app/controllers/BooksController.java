@@ -1,14 +1,20 @@
 package controllers;
+
 import play.mcv.Controller;
 import play.mcv.Result;
-import com.sun.xml.internal.bind.v2.TODO;
+
+import views.html.books.*;
+
+import java.util.Set;
 
 
 public class BooksController  extends Controller{
 
     //for all books
     public Result index(){
-        return TODO;
+        Set<Book> books = Book.allBooks();
+
+        return ok(index.render(books));
     }
 
     //to create book
