@@ -31,8 +31,10 @@ public class BooksController  extends Controller{
 
     //to save book
     public Result save() {
-
-        return TODO;
+        Form<Book> bookForm = FormFactory.form(Book.class).bindFromRequest();
+        Book book = bookForm.get();
+        Book.add(book);
+        return redirect(routes.BooksController.index());
     }
 
     public Result edit(Integer id) {
