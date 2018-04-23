@@ -1,14 +1,19 @@
 package controllers;
 
+import play.data.FormFactory;
 import play.mcv.Controller;
 import play.mcv.Result;
 
 import views.html.books.*;
 
+import javax.inject.Inject;
 import java.util.Set;
 
 
 public class BooksController  extends Controller{
+
+    @inject
+    FormFactory formFactory;
 
     //for all books
     public Result index(){
@@ -19,11 +24,14 @@ public class BooksController  extends Controller{
 
     //to create book
     public Result create(){
-        return TODO;
+        Form<Book> bookForm = formFactory.form(Book.class);
+
+        return ok(create.render(bookForm));
     }
 
     //to save book
     public Result save() {
+
         return TODO;
     }
 
