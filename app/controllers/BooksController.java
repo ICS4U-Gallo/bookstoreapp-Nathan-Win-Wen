@@ -29,7 +29,7 @@ public class BooksController  extends Controller{
         return TODO;
     }
 
-    public Result destroy() {
+    public Result destroy(Integer id) {
         return TODO;
     }
 
