@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Book;
 import play.data.FormFactory;
 import play.mcv.Controller;
 import play.mcv.Result;
@@ -49,7 +50,15 @@ public class BooksController  extends Controller{
     }
 
     public Result update() {
-        return TODO;
+        Book book = FormFactory.form(Book.class).get();
+        Book oldbook = Book.findById(book.id);
+        if(oldBook == null){
+            return notFound("Book Not Found");
+        }
+        oldBook.title = book.title;
+        oldBook.author = book.author;
+        oldBook.price = book.price
+        return redirect(routes.BooksController.index());
     }
 
     public Result destroy(Integer id) {
