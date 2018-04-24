@@ -61,12 +61,17 @@ public class BooksController  extends Controller{
         return redirect(routes.BooksController.index());
     }
 
+    //for book details
+    public Result show(Integer id) {
+        Book book = Book.findById(id);
+        if(book==null){
+            return notFound("Book not found");
+        }
+        return ok(show.render(book));
+    }
+
     public Result destroy(Integer id) {
         return TODO;
     }
-
-    //for book details
-    public Result show(Integer id) {
-        return TODO;
-    }
 }
+

@@ -5,10 +5,10 @@ import java.util.Set;
 
 public class Book {
 
-    private Integer id;
-    private String title;
-    private Integer price;
-    private String author;
+    Integer id;
+    String title;
+    Integer price;
+    String author;
 
     public Book(){
 
